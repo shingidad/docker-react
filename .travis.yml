@@ -4,10 +4,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t shingidad/docker-react -f Dockerfile .
+  - docker build -t shingidad/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run shingidad/docker-react
+  - docker run shingidad/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
